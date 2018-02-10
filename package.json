@@ -5,20 +5,26 @@
   "main": "index.js",
   "scripts": {
     "start": "yarn run relay && webpack-dev-server --hot --open",
-    "fetch-schema": "graphql-js-schema-fetch http://localhost:8080/graphql > public/schema.json",
-    "relay": "relay-compiler --src ./src --schema ./public/schema.json"
+    "build": "yarn run relay && webpack -p --config ./webpack.production.config.js",
+    "relay": "relay-compiler --src ./src --schema ./public/schema.json",
+    "fetch-schema": "graphql-js-schema-fetch http://localhost:8080/graphql > public/schema.json"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/spiegela/react-relay-modern-starter-kit.git"
+    "url": "git+https://github.com/pt-br/relay-modern-boilerplate.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "relay modern boilerplate",
+    "relay modern",
+    "react boilerplate",
+    "build",
+    "webpack"
+  ],
+  "author": "@pt-br",
   "bugs": {
-    "url": "git+https://github.com/spiegela/react-relay-modern-starter-kit.git/issues"
+    "url": "git+https://github.com/pt-br/relay-modern-boilerplate.git/issues"
   },
-  "homepage": "git+https://github.com/spiegela/react-relay-modern-starter-kit.git",
+  "homepage": "git+https://github.com/pt-br/relay-modern-boilerplate.git",
   "dependencies": {
     "found": "^0.3.4",
     "found-relay": "next",

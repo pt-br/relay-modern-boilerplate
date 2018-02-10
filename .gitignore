@@ -39,5 +39,8 @@ jspm_packages
 #IDE
 .idea
 
+# Production build files
+build
+
 # Relay Compiler files
 __generated__

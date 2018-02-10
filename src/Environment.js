@@ -6,17 +6,19 @@ import {
   Store
 } from 'relay-runtime';
 
+const graphqlUrl = ENV === 'prod' ? GRAPHQL_API : '/graphql';
+
 function fetchQuery(
   operation,
   variables,
   cacheConfig,
   uploadables
 ) {
-  return fetch('/graphql', {
+  return fetch(graphqlUrl, {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
-      'Content-Type': 'application/graphql',
+      'Content-Type': 'application/graphql'
     },
     body: operation.text
   }).then(response => {

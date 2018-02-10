@@ -11,19 +11,9 @@ module.exports = {
       './src/index'
     ]
   },
-  devServer: {
-    historyApiFallback: true,
-    port: 3000,
-    hot: true,
-    watchContentBase: true,
-    proxy: {
-      "/graphql": "http://localhost:8080",
-    }
-  },
-  devtool: 'inline-source-map',
   output: {
-    path: path.resolve(__dirname, './dist'),
-    filename: '[name].js'
+    path: path.resolve(__dirname, './build'),
+    filename: '[name].min.js'
   },
   module: {
     rules: [
@@ -38,9 +28,22 @@ module.exports = {
     new HtmlWebpackPlugin({
       inject: true,
       template: 'public/index.html',
+      minify: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeRedundantAttributes: true,
+        useShortDoctype: true,
+        removeEmptyAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        keepClosingSlash: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true,
+      },
     }),
     new webpack.DefinePlugin({
-      ENV: JSON.stringify('dev'),
+      ENV: JSON.stringify('prod'),
+      GRAPHQL_API: JSON.stringify('http://localhost:8080/graphql')
     }),
   ]
 }

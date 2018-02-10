@@ -1,8 +1,6 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import { AppContainer } from 'react-hot-loader'
-
-import styles from './index.scss'
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { AppContainer } from 'react-hot-loader';
 import Router from './Router'
 
 const render = Component => {
@@ -11,10 +9,10 @@ const render = Component => {
       <Component />
     </AppContainer>,
     document.getElementById('root')
-  )
+  );
 }
 
-render(Router)
+render(Router);
 
 if (module.hot) {
   module.hot.accept('./Router', () => { render(Router) })
