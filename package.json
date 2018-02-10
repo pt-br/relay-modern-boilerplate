@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --hot --open",
-    "fetch-schema": "graphql-js-schema-fetch http://localhost:8080/graphql > dist/schema.json",
-    "relay": "relay-compiler --src ./src --schema ./dist/schema.json"
+    "start": "yarn run relay && webpack-dev-server --hot --open",
+    "fetch-schema": "graphql-js-schema-fetch http://localhost:8080/graphql > public/schema.json",
+    "relay": "relay-compiler --src ./src --schema ./public/schema.json"
   },
   "repository": {
     "type": "git",
