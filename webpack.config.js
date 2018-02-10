@@ -1,5 +1,6 @@
-const webpack = require('webpack')
-const path = require('path')
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   devtool: 'source-map',
@@ -47,5 +48,11 @@ module.exports = {
         ]
       }
     ]
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      inject: true,
+      template: 'public/index.html',
+    }),
+  ]
 }
