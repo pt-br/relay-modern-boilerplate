@@ -28,6 +28,9 @@ You can combine this boilerplate with my [GraphQL Server](https://github.com/pt-
         │   │   │-- AnotherPage.js
         │   │-- home
         │       │-- Home.js
+        │       │-- Home.test.js
+        │       │-- _snapshots_
+        │           │-- Header.test.js.snap
         │       │-- components
         │           │-- phones
         │               │-- Phone.js
