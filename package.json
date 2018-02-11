@@ -8,7 +8,8 @@
     "soft-start": "webpack-dev-server --hot --open --config ./config/webpack.config.js",
     "build": "yarn run compile-relay && webpack -p --config ./config/webpack.production.config.js",
     "compile-relay": "yarn run fetch-schema && relay-compiler --src ./src --schema ./public/schema.json",
-    "fetch-schema": "graphql-js-schema-fetch http://localhost:8080/graphql > public/schema.json"
+    "fetch-schema": "graphql-js-schema-fetch http://localhost:8080/graphql > public/schema.json",
+    "test": "jest --watch"
   },
   "repository": {
     "type": "git",
@@ -31,8 +32,8 @@
     "found-relay": "next",
     "graphql-relay": "^0.5.2",
     "normalize.css": "^7.0.0",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1",
     "react-relay": "^1.3.0",
     "relay-compiler": "^1.3.0",
     "relay-runtime": "^1.3.0",
@@ -40,15 +41,26 @@
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
+    "babel-jest": "^22.2.2",
     "babel-loader": "^7.1.2",
     "babel-plugin-relay": "^1.3.0",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.1",
     "graphql-js-schema-fetch": "^1.1.2",
     "html-webpack-plugin": "^2.30.1",
+    "jest": "^22.2.2",
     "react-hot-loader": "next",
+    "regenerator-runtime": "^0.11.1",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.8.2"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   }
 }

@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header component should render correctly 1`] = `
+<styled.div>
+  <HeaderTitle>
+    I'm the header
+  </HeaderTitle>
+</styled.div>
+`;
