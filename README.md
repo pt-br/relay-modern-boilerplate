@@ -4,6 +4,8 @@ Detailed docs coming soon.
 
 You can combine this boilerplate with my [GraphQL Server](https://github.com/pt-br/GraphQL-Server).
 
+## Project Structure
+
 ```bash
 │-- Root
     │-- .babelrc
