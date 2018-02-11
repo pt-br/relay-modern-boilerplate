@@ -4,7 +4,7 @@ class AnotherPage extends Component {
   render() {
     return (
       <div>
-        I'm just another page
+        {`I'm just another page`}
       </div>
     );
   }

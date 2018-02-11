@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
+
 import HeaderTitle from './components/HeaderTitle';
+
+const Container = styled.div`
+  clear: both;
+`;
 
 class Header extends Component {
   constructor(props) {
@@ -14,13 +20,13 @@ class Header extends Component {
   
   render() {
     return (
-      <div>
+      <Container>
         {this.excludedRoutes.includes(this.currentRoute) ? null : (
           <HeaderTitle>
             I'm the header
           </HeaderTitle>
         )}
-      </div>
+      </Container>
     );
   }
 }

@@ -3,15 +3,20 @@ import {
   graphql,
   createFragmentContainer
 } from 'react-relay';
+import styled from 'styled-components';
 
 import Phone from './Phone';
+
+const Container = styled.div`
+  clear: both;
+`;
 
 class Phones extends Component {
   render() {
     const { edges } = this.props.viewer.phones;
 
     return (
-      <div>
+      <Container>
         {edges.map(edge => {
           const { phoneId, model, image } = edge.node;
           return (
@@ -23,7 +28,7 @@ class Phones extends Component {
             />
           );
         })}
-      </div>
+      </Container>
     );
   }
 }

@@ -17,6 +17,7 @@ const query = graphql`
 export default makeRouteConfig(
   <Route path="/">
     <Route Component={Home} query={query} />
+    
     <Route path="page-without-header-example">
       <Route Component={AnotherPage} query={query} />
     </Route>

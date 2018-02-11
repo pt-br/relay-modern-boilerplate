@@ -4,11 +4,16 @@ import queryMiddleware from 'farce/lib/queryMiddleware';
 import createFarceRouter from 'found/lib/createFarceRouter';
 import createRender from 'found/lib/createRender';
 import { Resolver } from 'found-relay';
+import styled from 'styled-components';
 
 import Routes from './Routes';
 import environment from './Environment';
 
 import Header from '../sharedComponents/header/Header';
+
+const AppContainer = styled.div`
+  clear: both;
+`;
 
 const FarceRouter = createFarceRouter({
   historyProtocol: new BrowserProtocol(),
@@ -20,10 +25,10 @@ const FarceRouter = createFarceRouter({
 export default class Router extends Component {
   render() {
     return(
-      <div>
+      <AppContainer>
         <Header />
         <FarceRouter resolver={new Resolver(environment)}/>
-      </div>
+      </AppContainer>
     );
   }
 }

@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  clear: both;
+`;
 
 class HeaderTitle extends Component {
 
@@ -6,9 +11,9 @@ class HeaderTitle extends Component {
     const { children } = this.props;
 
     return (
-      <div>
+      <Container>
         {children}
-      </div>
+      </Container>
     );
   }
 }
