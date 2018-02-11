@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "yarn run compile-relay && webpack-dev-server --hot --open --config ./config/webpack.config.js",
+    "start": "yarn run fetch-schema && webpack-dev-server --hot --open --config ./config/webpack.config.js",
     "soft-start": "webpack-dev-server --hot --open --config ./config/webpack.config.js",
-    "build": "yarn run compile-relay && webpack -p --config ./config/webpack.production.config.js",
-    "compile-relay": "yarn run fetch-schema && relay-compiler --src ./src --schema ./public/schema.json",
+    "build": "yarn run fetch-schema && yarn run compile-relay && webpack -p --config ./config/webpack.production.config.js",
+    "compile-relay": "relay-compiler --src ./src --schema ./public/schema.json",
     "fetch-schema": "graphql-js-schema-fetch http://localhost:8080/graphql > public/schema.json",
     "test": "jest --watch"
   },
@@ -56,7 +56,8 @@
     "react-hot-loader": "next",
     "regenerator-runtime": "^0.11.1",
     "webpack": "^3.6.0",
-    "webpack-dev-server": "^2.8.2"
+    "webpack-dev-server": "^2.8.2",
+    "webpack-shell-plugin": "^0.5.0"
   },
   "jest": {
     "snapshotSerializers": [

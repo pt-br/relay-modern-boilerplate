@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const WebpackShellPlugin = require('webpack-shell-plugin');
 
 module.exports = {
   devtool: 'source-map',
@@ -35,6 +36,9 @@ module.exports = {
     ]
   },
   plugins: [
+    new WebpackShellPlugin({
+      onBuildEnd: ['yarn run compile-relay --watch'],
+    }),
     new HtmlWebpackPlugin({
       inject: true,
       template: 'public/index.html',
