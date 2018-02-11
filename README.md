@@ -1,5 +1,6 @@
 # relay-modern-boilerplate
 
+```bash
 |-- File structure
     |-- .babelrc
     |-- .editorconfig
@@ -34,3 +35,5 @@
                 |-- Header.js
                 |-- components
                     |-- HeaderTitle.js
+
+```
