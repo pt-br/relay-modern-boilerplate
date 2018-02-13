@@ -18,11 +18,11 @@ class Phones extends Component {
     return (
       <Container>
         {edges.map(edge => {
-          const { phoneId, model, image } = edge.node;
+          const { _id, model, image } = edge.node;
           return (
             <Phone
-              key={phoneId}
-              phoneId={phoneId}
+              key={_id}
+              phoneId={_id}
               model={model}
               image={image}
             />
@@ -39,8 +39,7 @@ const phonesContainer = createFragmentContainer(Phones, {
       phones {
         edges {
           node {
-            id
-            phoneId
+            _id
             model
             image
           }
