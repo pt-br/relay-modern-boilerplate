@@ -8,8 +8,8 @@ import AnotherPage from '../pages/anotherPage/AnotherPage';
 
 const query = graphql`
   query RoutesQuery {
-    viewer {
-      ...Phones_viewer
+    allPhones {
+      ...Phones_allPhones
     }
   }
 `;
