@@ -13,8 +13,10 @@ const Container = styled.div`
 
 class Phones extends Component {
   render() {
-    const { edges } = this.props.allPhones.phones;
+    const { edges } = this.props.viewer.phones;
 
+    const { phoneById } = this.props.viewer; // Just an example
+ 
     return (
       <Container>
         {edges.map(edge => {
@@ -34,8 +36,8 @@ class Phones extends Component {
 }
 
 const phonesContainer = createFragmentContainer(Phones, {
-  allPhones: graphql`
-    fragment Phones_allPhones on Phones {
+  viewer: graphql`
+    fragment Phones_viewer on User {
       phones {
         edges {
           node {
@@ -44,6 +46,11 @@ const phonesContainer = createFragmentContainer(Phones, {
             image
           }
         }
+      }
+      phoneById(phoneId: "5a8201a813cd737e41a608d1") {
+        image
+        _id
+        model
       }
     }
   `

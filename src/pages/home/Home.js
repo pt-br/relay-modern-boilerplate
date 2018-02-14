@@ -11,7 +11,7 @@ class Home extends Component {
   render() {
     return (
       <Container>
-        <Phones allPhones={this.props.allPhones}/>
+        <Phones viewer={this.props.viewer}/>
       </Container>
     );
   }
