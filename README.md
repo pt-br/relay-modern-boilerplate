@@ -2,7 +2,7 @@
 
 Detailed docs coming soon.
 
-You can combine this boilerplate with my [GraphQL Server](https://github.com/pt-br/GraphQL-Server).
+You can combine this boilerplate with my [GraphQL Server](https://github.com/pt-br/GraphQL-Server/tree/fake-data) (using fake data).
 
 ## Project Structure
 
